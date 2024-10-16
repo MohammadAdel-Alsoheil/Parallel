@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
     float start, end, local_area, total_area;
 
     //assume n is given
-    n = 10000000;
+    n = 20000000;
     
     double sequential_start, sequential_end,sequential_time;
     double sequential_area = 0;
@@ -64,7 +64,8 @@ int main(int argc, char** argv) {
         printf("The time took to complete the operation is: %f  \n", sequential_time);
 
     }
-   
+    
+    MPI_Barrier(MPI_COMM_WORLD);
 
     parallel_start = MPI_Wtime();
     // Broadcast the number of intervals to all processes
